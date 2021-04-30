@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "*.wxss": "css",
+    "*.wxs": "javascript",
+    "*.acss": "css",
+    "*.axml": "html",
+    "*.wxml": "html",
+    "*.swan": "html"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "mp-enspire",
+  "version": "1.0.0",
+  "description": "Make CAS great again",
+  "license": "MIT",
+  "scripts": {
+    "prettier": "gulp all"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.13.14",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "gulp": "^4.0.2",
+    "prettier": "^2.2.1"
+  }
+}

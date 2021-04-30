@@ -1,6 +1,14 @@
 <!--pages/CAS/CAS.wxml-->
 <view class="contentcontainer">
-  <image src="/assets/b_index_unselected.png" bindtap="b_index" class="contentbutton"></image>
+  <image
+    src="/assets/b_index_unselected.png"
+    bindtap="b_index"
+    class="contentbutton"
+  ></image>
   <image src="/assets/b_CAS_selected.png" class="contentbutton"></image>
-  <image src="/assets/b_personal_unselected.png" bindtap="b_personal" class="contentbutton"></image>
+  <image
+    src="/assets/b_personal_unselected.png"
+    bindtap="b_personal"
+    class="contentbutton"
+  ></image>
 </view>

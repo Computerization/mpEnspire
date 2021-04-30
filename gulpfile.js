@@ -19,7 +19,7 @@ const wxssPrettier = () => {
     .pipe(
       // 重写扩展名为 css，才能被 Prettier 识别解析
       rename({
-        extname: '.css'
+        extname: '.css',
       })
     )
     .pipe(
@@ -29,14 +29,14 @@ const wxssPrettier = () => {
     .pipe(
       // 重新将扩展名改为 wxss
       rename({
-        extname: '.wxss'
+        extname: '.wxss',
       })
     )
     .pipe(
       // 导出文件
       dest(__dirname)
-    )
-}
+    );
+};
 
 // acss 一键格式化
 const acssPrettier = () => {
@@ -44,17 +44,17 @@ const acssPrettier = () => {
     .pipe(debug())
     .pipe(
       rename({
-        extname: '.css'
+        extname: '.css',
       })
     )
     .pipe(prettier(config))
     .pipe(
       rename({
-        extname: '.acss'
+        extname: '.acss',
       })
     )
-    .pipe(dest(__dirname))
-}
+    .pipe(dest(__dirname));
+};
 
 // wxml 一键格式化
 const wxmlPrettier = () => {
@@ -62,19 +62,17 @@ const wxmlPrettier = () => {
     .pipe(debug())
     .pipe(
       rename({
-        extname: '.html'
+        extname: '.html',
       })
     )
-    .pipe(
-      prettier(config)
-    )
+    .pipe(prettier(config))
     .pipe(
       rename({
-        extname: '.wxml'
+        extname: '.wxml',
       })
     )
-    .pipe(dest(__dirname))
-}
+    .pipe(dest(__dirname));
+};
 
 // 这里导出多个 task，通过 gulp xxx 就能来调用了，如 gulp all
 // 关于 series、parallel API 分别是按顺序执行（同步）、同时执行（并行）
@@ -82,5 +80,5 @@ module.exports = {
   all: parallel(wxssPrettier, wxmlPrettier, acssPrettier),
   wxss: wxssPrettier,
   wxml: wxmlPrettier,
-  acss: acssPrettier
-}
+  acss: acssPrettier,
+};

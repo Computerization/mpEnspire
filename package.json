@@ -4,7 +4,7 @@
   "description": "Make CAS great again",
   "license": "MIT",
   "scripts": {
-    "prettier": "prettier --write **.{js,json,md} && gulp all"
+    "prettier": "prettier --write '**/*.{js,json,md}' && gulp all"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",

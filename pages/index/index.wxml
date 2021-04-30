@@ -1,25 +1,36 @@
 <!--pages/index/index.wxml-->
 <view class="contentcontainer">
   <image src="/assets/b_index_selected.png" class="contentbutton"></image>
-  <image src="/assets/b_CAS_unselected.png" bindtap="b_CAS" class="contentbutton"></image>
-  <image src="/assets/b_personal_unselected.png" bindtap="b_personal" class="contentbutton"></image>
+  <image
+    src="/assets/b_CAS_unselected.png"
+    bindtap="b_CAS"
+    class="contentbutton"
+  ></image>
+  <image
+    src="/assets/b_personal_unselected.png"
+    bindtap="b_personal"
+    class="contentbutton"
+  ></image>
 </view>
 <view class="maincontainer">
   <view class="paragraphcontainer">
-    <image src="/assets/b_index_selected.png" style="height:100px;width:100px;">
+    <image
+      src="/assets/b_index_selected.png"
+      style="height: 100px; width: 100px"
+    >
     </image>
     <view class="verticalcenter">
       <text>Make CAS great again.</text>
     </view>
   </view>
-  <view style="height:15px"></view>
+  <view style="height: 15px"></view>
   <view class="paragraphcontainer">
     <view class="textcontainer">
       <text decode="true">
         水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数水字数
       </text>
-      <view style="height:15px"></view>
+      <view style="height: 15px"></view>
     </view>
   </view>
-  <view style="height:100px"></view>
+  <view style="height: 100px"></view>
 </view>

@@ -7,7 +7,7 @@ const rename = require('gulp-rename');
 const debug = require('gulp-debug');
 const clean = require('gulp-clean');
 const prettier = require('gulp-prettier');
-const config = require('./.prettierrc');
+const config = require('./.prettierrc.json');
 
 // wxss 一键格式化
 const wxssPrettier = () => {
@@ -56,10 +56,31 @@ const acssPrettier = () => {
     .pipe(dest(__dirname))
 }
 
+// wxml 一键格式化
+const wxmlPrettier = () => {
+  return src('./**/*.wxml')
+    .pipe(debug())
+    .pipe(
+      rename({
+        extname: '.html'
+      })
+    )
+    .pipe(
+      prettier(config)
+    )
+    .pipe(
+      rename({
+        extname: '.wxml'
+      })
+    )
+    .pipe(dest(__dirname))
+}
+
 // 这里导出多个 task，通过 gulp xxx 就能来调用了，如 gulp all
 // 关于 series、parallel API 分别是按顺序执行（同步）、同时执行（并行）
 module.exports = {
-  all: parallel(wxssPrettier, acssPrettier),
+  all: parallel(wxssPrettier, wxmlPrettier, acssPrettier),
   wxss: wxssPrettier,
+  wxml: wxmlPrettier,
   acss: acssPrettier
 }

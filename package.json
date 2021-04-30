@@ -4,7 +4,7 @@
   "description": "Make CAS great again",
   "license": "MIT",
   "scripts": {
-    "prettier": "gulp all"
+    "prettier": "prettier --write **.{js,json,md} && gulp all"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",
@@ -13,6 +13,10 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-debug": "^4.0.0",
+    "gulp-prettier": "^3.0.0",
+    "gulp-rename": "^2.0.0",
     "prettier": "^2.2.1"
   }
 }

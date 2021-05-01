@@ -6,8 +6,8 @@ const { series, parallel, src, dest } = require('gulp');
 const rename = require('gulp-rename');
 const debug = require('gulp-debug');
 const clean = require('gulp-clean');
-const prettier = require('gulp-prettier');
-const config = require('./.prettierrc.json');
+const eslint = require('gulp-eslint');
+const config = require('./.eslintrc.js');
 
 // wxss 一键格式化
 const wxssPrettier = () => {
@@ -17,14 +17,14 @@ const wxssPrettier = () => {
       debug()
     )
     .pipe(
-      // 重写扩展名为 css，才能被 Prettier 识别解析
+      // 重写扩展名为 css，才能被 ESLint 识别解析
       rename({
         extname: '.css',
       })
     )
     .pipe(
-      // Prettier 格式化
-      prettier(config)
+      // ESLint 格式化
+      eslint(config)
     )
     .pipe(
       // 重新将扩展名改为 wxss
@@ -47,7 +47,7 @@ const acssPrettier = () => {
         extname: '.css',
       })
     )
-    .pipe(prettier(config))
+    .pipe(eslint(config))
     .pipe(
       rename({
         extname: '.acss',
@@ -65,7 +65,7 @@ const wxmlPrettier = () => {
         extname: '.html',
       })
     )
-    .pipe(prettier(config))
+    .pipe(eslint(config))
     .pipe(
       rename({
         extname: '.wxml',

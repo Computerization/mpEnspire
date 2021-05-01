@@ -4,12 +4,7 @@
     src="/assets/b_index_unselected.png"
     bindtap="b_index"
     class="contentbutton"
-    style="
-      width: 100rpx;
-      height: 100rpx;
-      display: block;
-      box-sizing: border-box;
-    "
+    style="width: 100rpx;height: 100rpx;display: block;box-sizing: border-box;"
   ></image>
   <image
     src="/assets/b_CAS_unselected.png"

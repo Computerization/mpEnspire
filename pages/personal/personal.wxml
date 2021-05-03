@@ -14,4 +14,30 @@
   <image src="/assets/b_personal_selected.png" class="contentbutton"></image>
 </view>
 <view class="maincontainer">
+  <view class="paragraphcontainer">
+    <view class="verticalcenter">
+      <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="verticalcenter">
+      <text decode="true">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+  <view style="height:15px"></view>
+  <view class="paragraphcontainer">
+    <view class="textcontainer">
+      <text decode="true">
+        姓名：{{realname}}
+      </text>
+      <text decode="true">
+        学号：{{schoolnumber}}
+      </text>
+      <text decode="true">
+        邮箱：{{emailaddress}}
+      </text>
+      <view style="height:15px"></view>
+      <view class="horizontalcenter">
+        <button bindtap="b_changeinfo">更改个人信息</button>
+      </view>
+    </view>
+  </view>
 </view>

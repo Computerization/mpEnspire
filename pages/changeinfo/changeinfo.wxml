@@ -1,0 +1,29 @@
+<!--pages/changeinfo/changeinfo.wxml-->
+<view class="maincontainer">
+  <view class="paragraphcontainer">
+    <view class="textcontainer">
+      <view class="subcontainer">
+        <text class="lowtext" decode="true">
+          姓名：
+        </text>
+        <input class="inputcontainer" bindinput="nameinput" value="{{realname}}"/>
+      </view>
+      <view class="subcontainer">
+        <text class="lowtext" decode="true">
+          学号：
+        </text>
+        <input class="inputcontainer" bindinput="numberinput" value="{{schoolnumber}}"/>
+      </view>
+      <view class="subcontainer">
+        <text class="lowtext" decode="true">
+          邮箱：
+        </text>
+        <input class="inputcontainer" bindinput="emailinput" value="{{emailaddress}}"/>
+      </view>
+      <view style="height:15px"></view>
+      <view class="horizontalcenter">
+        <button bindtap="b_finished">完成更改</button>
+      </view>
+    </view>
+  </view>
+</view>

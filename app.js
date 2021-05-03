@@ -9,6 +9,9 @@ App({
       env:"enspire-env-7gn7r6ekad6dfbe4",
       traceUser: true
     });
+    wx.cloud.init({
+      env:"enspire-env-7gn7r6ekad6dfbe4"
+    });
     // 登录
     wx.login({
       success: (res) => {

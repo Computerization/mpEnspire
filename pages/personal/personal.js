@@ -9,7 +9,44 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const that=this;
     wx.hideHomeButton();
+    wx.getStorage({
+      key: 'hasUserInfo',
+      success: res=>{
+        if(res.data==false){
+          that.setData({
+            text:"您尚未登陆"
+          })
+        }
+        else{
+          wx.getStorage({
+            key: 'UserInfo',
+            success: res=>{
+              that.setData({
+                userInfo:res.data
+              })
+            }
+          })
+        }
+      },
+      fail:res =>{
+        that.setData({
+          text:"您尚未登陆"
+        })
+      }
+    });
+    const db = wx.cloud.database().collection("users").where({openid: this.data._openid});
+    console.log(db);
+    db.get({
+      success(res){
+        that.setData({
+          realname:res.data[0].realname,
+          schoolnumber:res.data[0].schoolnumber,
+          emailaddress:res.data[0].emailaddress,
+        });
+      }
+    })
   },
 
   /**
@@ -55,6 +92,11 @@ Page({
   b_CAS: function () {
     wx.reLaunch({
       url: '/pages/CAS/CAS',
+    });
+  },
+  b_changeinfo: function () {
+    wx.navigateTo({
+      url: '/pages/changeinfo/changeinfo',
     });
   },
 });

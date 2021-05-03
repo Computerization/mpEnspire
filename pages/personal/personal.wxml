@@ -1,5 +1,6 @@
 <!--pages/personal/personal.wxml-->
 <view class="contentcontainer">
+  <!-- prettier-ignore-attribute style -->
   <image
     src="/assets/b_index_unselected.png"
     bindtap="b_index"

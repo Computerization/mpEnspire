@@ -5,56 +5,55 @@ Page({
    */
   data: {
     userInfo: {
-      nickName:"请先登陆"
-    }
+      nickName: '请先登陆',
+    },
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const that=this;
+    const that = this;
     wx.hideHomeButton();
     wx.getStorage({
       key: 'hasUserInfo',
-      success: res=>{
-        if(res.data==false){
+      success: (res) => {
+        if (res.data == false) {
           that.setData({
-            text:"您尚未登陆"
-          })
-        }
-        else{
+            text: '您尚未登陆',
+          });
+        } else {
           wx.getStorage({
             key: 'UserInfo',
-            success: res=>{
+            success: (res) => {
               that.setData({
-                userInfo:res.data
-              })
-            }
-          })
+                userInfo: res.data,
+              });
+            },
+          });
         }
       },
-      fail:res =>{
+      fail: (res) => {
         that.setData({
-          text:"您尚未登陆"
-        })
-      }
+          text: '您尚未登陆',
+        });
+      },
     });
-    const db = wx.cloud.database().collection("users");
+    const db = wx.cloud.database().collection('users');
     that.setData({
-      realname:"未知",
-      schoolnumber:"未知",
-      emailaddress:"未知",
+      realname: '未知',
+      schoolnumber: '未知',
+      emailaddress: '未知',
     });
     db.get({
-      success(res){
+      success(res) {
         that.setData({
-          realname:res.data[0].realname,
-          schoolnumber:res.data[0].schoolnumber,
-          emailaddress:res.data[0].emailaddress,
+          realname: res.data[0].realname,
+          schoolnumber: res.data[0].schoolnumber,
+          emailaddress: res.data[0].emailaddress,
         });
-      }
-    })
+      },
+    });
   },
 
   /**

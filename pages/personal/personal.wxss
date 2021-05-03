@@ -1,7 +1,7 @@
 /* pages/personal/personal.wxss */
-.avatar{
-  width:100px;
-  height:100px;
+.avatar {
+  width: 100px;
+  height: 100px;
   background-color: lightgray;
   border-radius: 50px;
 }

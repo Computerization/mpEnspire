@@ -7,7 +7,7 @@ page {
   display: flex;
   align-items: center;
 }
-.horizontalcenter{
+.horizontalcenter {
   display: flex;
   justify-content: center;
 }
@@ -25,13 +25,13 @@ page {
   display: flex;
   justify-content: space-around;
 }
-.title{
-  font-size:x-large;
+.title {
+  font-size: x-large;
   font-weight: bolder;
 }
-.paragraph{
+.paragraph {
   font-size: normal;
-  font-weight:normal;
+  font-weight: normal;
 }
 .contentcontainer {
   position: fixed;

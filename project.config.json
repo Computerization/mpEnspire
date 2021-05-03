@@ -54,6 +54,7 @@
   "isGameTourist": false,
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "search": {
       "list": []
@@ -73,5 +74,6 @@
     "miniprogram": {
       "list": []
     }
-  }
+  },
+  "cloudbaseRoot": "cloudbase/"
 }

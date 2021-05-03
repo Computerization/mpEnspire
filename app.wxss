@@ -22,3 +22,11 @@ page {
   display: flex;
   justify-content: space-around;
 }
+.title{
+  font-size:x-large;
+  font-weight: bolder;
+}
+.paragraph{
+  font-size: normal;
+  font-weight:normal;
+}

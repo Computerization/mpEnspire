@@ -4,7 +4,6 @@
     src="/assets/b_index_unselected.png"
     bindtap="b_index"
     class="contentbutton"
-    style="width: 100rpx;height: 100rpx;display: block;box-sizing: border-box;"
   ></image>
   <image
     src="/assets/b_CAS_unselected.png"
@@ -12,4 +11,6 @@
     class="contentbutton"
   ></image>
   <image src="/assets/b_personal_selected.png" class="contentbutton"></image>
+</view>
+<view class="maincontainer">
 </view>

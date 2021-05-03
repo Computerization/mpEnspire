@@ -3,7 +3,11 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {},
+  data: {
+    userInfo: {
+      nickName:"请先登陆"
+    }
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -36,8 +40,12 @@ Page({
         })
       }
     });
-    const db = wx.cloud.database().collection("users").where({openid: this.data._openid});
-    console.log(db);
+    const db = wx.cloud.database().collection("users");
+    that.setData({
+      realname:"未知",
+      schoolnumber:"未知",
+      emailaddress:"未知",
+    });
     db.get({
       success(res){
         that.setData({

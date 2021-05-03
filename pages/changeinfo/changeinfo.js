@@ -10,22 +10,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const db = wx.cloud.database().collection("users").where({openid: this.data._openid});
     const that=this;
-    console.log(db);
-    db.get({
-      success(res){
-        that.setData({
-          realname:res.data[0].realname,
-          newname:res.data[0].realname,
-          schoolnumber:res.data[0].schoolnumber,
-          newnumber:res.data[0].schoolnumber,
-          emailaddress:res.data[0].emailaddress,
-          newemail:res.data[0].emailaddress,
-          isnotempty:res.data[0].isnotempty
-        });
+    wx.getStorage({
+      key: 'openid',
+      success:res=>{
+        this.data.openid=res.data;
+        const db = wx.cloud.database().collection("users");
+        db.get({
+          success(res){
+            console.log(res);
+            that.setData({
+              realname:res.data[0].realname,
+              newname:res.data[0].realname,
+              schoolnumber:res.data[0].schoolnumber,
+              newnumber:res.data[0].schoolnumber,
+              emailaddress:res.data[0].emailaddress,
+              newemail:res.data[0].emailaddress,
+              isnotempty:res.data[0].isnotempty
+            });
+            console.log(realname);
+          }
+        })
       }
     })
+    
   },
 
   /**
@@ -88,7 +96,7 @@ Page({
   },
   b_finished:function(){
     if(this.data.isnotempty==true){
-      wx.cloud.database().collection("users").where({openid: this.data._openid}).update({
+      wx.cloud.database().collection("users").where({_openid: this.data._openid}).update({
         data: {
           isnotempty:true,
           realname:this.data.newname,

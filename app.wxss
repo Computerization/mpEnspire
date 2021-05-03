@@ -22,7 +22,6 @@ page {
   border-radius: 15px;
   padding: 15px 0px 15px 0px;
   box-shadow: 0 5px 15px rgba(65, 65, 65, 0.1);
-  text-shadow: 0 1px 1px rgba(64, 64, 64, 0.3);
   display: flex;
   justify-content: space-around;
 }
@@ -41,7 +40,6 @@ page {
   padding: 10px 0px 0px 0px;
   bottom: 0px;
   box-shadow: 0 -10px 15px rgba(65, 65, 65, 0.3);
-  text-shadow: 0 1px 1px rgba(64, 64, 64, 0.3);
   display: flex;
   justify-content: space-around;
   background-color: white;

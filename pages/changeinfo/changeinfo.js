@@ -15,18 +15,18 @@ Page({
       key: 'openid',
       success:res=>{
         this.data.openid=res.data;
-        const db = wx.cloud.database().collection("users");
+        const db = wx.cloud.database().collection("users").doc(this.data.openid);
         db.get({
           success(res){
             console.log(res);
             that.setData({
-              realname:res.data[0].realname,
-              newname:res.data[0].realname,
-              schoolnumber:res.data[0].schoolnumber,
-              newnumber:res.data[0].schoolnumber,
-              emailaddress:res.data[0].emailaddress,
-              newemail:res.data[0].emailaddress,
-              isnotempty:res.data[0].isnotempty
+              realname:res.data.realname,
+              newname:res.data.realname,
+              schoolnumber:res.data.schoolnumber,
+              newnumber:res.data.schoolnumber,
+              emailaddress:res.data.emailaddress,
+              newemail:res.data.emailaddress,
+              isnotempty:res.data.isnotempty
             });
             console.log(realname);
           }
@@ -96,7 +96,7 @@ Page({
   },
   b_finished:function(){
     if(this.data.isnotempty==true){
-      wx.cloud.database().collection("users").where({_openid: this.data._openid}).update({
+      wx.cloud.database().collection("users").doc(this.data.openid).update({
         data: {
           isnotempty:true,
           realname:this.data.newname,
@@ -107,10 +107,12 @@ Page({
     }else {
       wx.cloud.database().collection("users").add({
         data: {
+          _id:this.data.openid,
           isnotempty:true,
           realname:this.data.newname,
           schoolnumber:this.data.newnumber,
           emailaddress:this.data.newemail,
+          club:[]
         },
       })
     }

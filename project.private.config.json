@@ -21,6 +21,12 @@
         {
           "name": "pages/changeinfo/changeinfo",
           "pathName": "pages/changeinfo/changeinfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/CAS/CAS",
+          "pathName": "pages/CAS/CAS",
           "scene": null
         }
       ]

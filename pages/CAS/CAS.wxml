@@ -12,3 +12,38 @@
     class="contentbutton"
   ></image>
 </view>
+<view class="maincontainer">
+  <view class="paragraphcontainer">
+    <view class="textcontainer">
+      <text class="title" decode="true">我所在的社团</text>
+      <view style="height:15px"></view>
+      <view wx:for="{{clubs}}" wx:key="wxkey" wx:for-index="idx" wx:for-item="club">
+        <!--<text>{{idx+1}}. {{club.name}} - {{club.year}}届{{club.position}}</text>-->
+        <text>{{idx+1}}. {{club.name}}</text>
+      </view>
+      <view style="height:10px"></view>
+      <view class="addbutton" bindtap="b_add1">
+        <view class="horizontalcenter">
+          <text decode="true">添加</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="darkmaincontainer" style="{{opacity1}}">
+  <view class="darkparagraphcontainer">
+    <view class="textcontainer">
+      <text class="subtitle" decode="true">加入社团( 输入番号 )</text>
+      <view class="delbutton" bindtap="b_del1">
+        <view class="horizontalcenter">
+          <text decode="true">x</text>
+        </view>
+      </view>
+      <view style="height:5px"></view>
+      <input class="inputcontainer" bindinput="addinput"/>
+      <view class="horizontalcenter">
+        <button bindtap="b_addin">加入社团</button>
+      </view>
+    </view>
+  </view>
+</view>

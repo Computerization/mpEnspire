@@ -40,19 +40,25 @@ Page({
         })
       }
     });
-    const db = wx.cloud.database().collection("users");
-    that.setData({
-      realname:"未知",
-      schoolnumber:"未知",
-      emailaddress:"未知",
-    });
-    db.get({
-      success(res){
+    wx.getStorage({
+      key: 'openid',
+      success:res=>{
+        this.data.openid=res.data;
+        const db = wx.cloud.database().collection("users").doc(this.data.openid);
         that.setData({
-          realname:res.data[0].realname,
-          schoolnumber:res.data[0].schoolnumber,
-          emailaddress:res.data[0].emailaddress,
+          realname:"未知",
+          schoolnumber:"未知",
+          emailaddress:"未知",
         });
+        db.get({
+          success(res){
+            that.setData({
+              realname:res.data.realname,
+              schoolnumber:res.data.schoolnumber,
+              emailaddress:res.data.emailaddress,
+            });
+          }
+        })
       }
     })
   },

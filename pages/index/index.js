@@ -9,29 +9,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const that=this;
+    const that = this;
     wx.hideHomeButton();
     wx.getStorage({
       key: 'hasUserInfo',
-      success: res=>{
-        if(res.data==false){
+      success: (res) => {
+        if (res.data == false) {
           that.askInfo();
-        }
-        else{
+        } else {
           wx.getStorage({
             key: 'UserInfo',
-            success: res=>{
+            success: (res) => {
               that.setData({
-                userInfo:res.data
-              })
-            }
-          })
+                userInfo: res.data,
+              });
+            },
+          });
         }
       },
-      fail:res =>{
+      fail: (res) => {
         that.askInfo();
-      }
-    })
+      },
+    });
   },
 
   /**
@@ -79,38 +78,38 @@ Page({
       url: '/pages/personal/personal',
     });
   },
-  askInfo: function(){
-    const that=this;
+  askInfo: function () {
+    const that = this;
     wx.showModal({
       title: '温馨提示',
       content: '为了使您正常使用该小程序，我们请求获得您的部分个人信息',
       success(res) {
         if (res.confirm) {
           wx.getUserProfile({
-            desc: "获取你的昵称、头像、地区及性别",
-            success: res => {
-              console.log(res)
+            desc: '获取你的昵称、头像、地区及性别',
+            success: (res) => {
+              console.log(res);
               that.setData({
-                userInfo:res.userInfo
-              })
+                userInfo: res.userInfo,
+              });
               wx.setStorage({
                 data: true,
                 key: 'hasUserInfo',
-              })
+              });
               wx.setStorage({
                 data: res.userInfo,
                 key: 'UserInfo',
-              })
+              });
             },
-          })
+          });
         }
       },
-      fail(res){
+      fail(res) {
         wx.setStorage({
           data: false,
           key: 'hasUserInfo',
-        })
-      }
-    })
-  }
+        });
+      },
+    });
+  },
 });

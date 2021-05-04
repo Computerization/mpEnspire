@@ -7,10 +7,11 @@ const rename = require('gulp-rename');
 const debug = require('gulp-debug');
 const clean = require('gulp-clean');
 const eslint = require('gulp-eslint');
+const prettier = require('gulp-prettier');
 const config = require('./.eslintrc.js');
 
 // wxss 一键格式化
-const wxssPrettier = () => {
+const wxssESLint = () => {
   return src('./**/*.wxss')
     .pipe(
       // 可以利用插件，查看一些 debug 信息
@@ -39,7 +40,7 @@ const wxssPrettier = () => {
 };
 
 // acss 一键格式化
-const acssPrettier = () => {
+const acssESLint = () => {
   return src('./**/*.acss')
     .pipe(debug())
     .pipe(
@@ -57,7 +58,7 @@ const acssPrettier = () => {
 };
 
 // wxml 一键格式化
-const wxmlPrettier = () => {
+const wxmlESLint = () => {
   return src('./**/*.wxml')
     .pipe(debug())
     .pipe(
@@ -74,11 +75,60 @@ const wxmlPrettier = () => {
     .pipe(dest(__dirname));
 };
 
+const wxssPrettier = () => {
+  return src('./**/*.wxss')
+    .pipe(debug())
+    .pipe(
+      rename({
+        extname: '.css',
+      })
+    )
+    .pipe(prettier(config))
+    .pipe(
+      rename({
+        extname: '.wxss',
+      })
+    )
+    .pipe(dest(__dirname));
+};
+
+const acssPrettier = () => {
+  return src('./**/*.acss')
+    .pipe(debug())
+    .pipe(
+      rename({
+        extname: '.css',
+      })
+    )
+    .pipe(prettier(config))
+    .pipe(
+      rename({
+        extname: '.acss',
+      })
+    )
+    .pipe(dest(__dirname));
+};
+
+const wxmlPrettier = () => {
+  return src('./**/*.wxml')
+    .pipe(debug())
+    .pipe(
+      rename({
+        extname: '.html',
+      })
+    )
+    .pipe(prettier(config))
+    .pipe(
+      rename({
+        extname: '.wxml',
+      })
+    )
+    .pipe(dest(__dirname));
+};
+
 // 这里导出多个 task，通过 gulp xxx 就能来调用了，如 gulp all
 // 关于 series、parallel API 分别是按顺序执行（同步）、同时执行（并行）
 module.exports = {
-  all: parallel(wxssPrettier, wxmlPrettier, acssPrettier),
-  wxss: wxssPrettier,
-  wxml: wxmlPrettier,
-  acss: acssPrettier,
+  'prettier:all': parallel(wxssPrettier, wxmlPrettier, acssPrettier),
+  'eslint:all': parallel(wxssESLint, wxmlESLint, acssESLint),
 };

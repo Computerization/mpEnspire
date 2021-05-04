@@ -26,14 +26,14 @@
   <view style="height: 15px"></view>
   <view class="paragraphcontainer">
     <view class="textcontainer">
-      <text class="title" decode="true"> Enspire是什么？ </text>
+      <text class="title" decode="true"> Enspire是什么？\n </text>
       <text class="paragraph" decode="true">
         Enspire 是一个初生企划，旨在为世外校内的 CAS
         活动提供技术支持平台。我们的目标是 Make CAS Great Again at SWFLA （大雾
       </text>
       <view style="height: 15px"></view>
       <view class="textcontainer">
-        <text class="title" decode="true"> 开发者 </text>
+        <text class="title" decode="true"> 开发者 \n</text>
         <text class="paragraph" decode="true">
           舒烨 - 20届C社社长
           陈思达 - 22届C社副社

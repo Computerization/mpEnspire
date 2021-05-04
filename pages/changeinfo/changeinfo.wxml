@@ -3,7 +3,7 @@
   <view class="paragraphcontainer">
     <view class="textcontainer">
       <view class="subcontainer">
-        <text class="lowtext" decode="true"> 姓名： </text>
+        <text class="lowtext" decode="true"> \n姓名： </text>
         <input
           class="inputcontainer"
           bindinput="nameinput"
@@ -11,7 +11,7 @@
         />
       </view>
       <view class="subcontainer">
-        <text class="lowtext" decode="true"> 学号： </text>
+        <text class="lowtext" decode="true"> \n学号： </text>
         <input
           class="inputcontainer"
           bindinput="numberinput"
@@ -19,7 +19,7 @@
         />
       </view>
       <view class="subcontainer">
-        <text class="lowtext" decode="true"> 邮箱： </text>
+        <text class="lowtext" decode="true"> \n邮箱： </text>
         <input
           class="inputcontainer"
           bindinput="emailinput"

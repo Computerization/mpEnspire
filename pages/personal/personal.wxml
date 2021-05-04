@@ -25,8 +25,8 @@
   <view style="height: 15px"></view>
   <view class="paragraphcontainer">
     <view class="textcontainer">
-      <text decode="true"> 姓名：{{realname}} \n</text>
-      <text decode="true"> 学号：{{schoolnumber}} \n</text>
+      <text decode="true"> 姓名：{{realname}} \n\n</text>
+      <text decode="true"> 学号：{{schoolnumber}} \n\n</text>
       <text decode="true"> 邮箱：{{emailaddress}}</text>
       <view style="height: 15px"></view>
       <view class="horizontalcenter">
